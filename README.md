@@ -17,7 +17,6 @@ sc.close();
 }
 }
 
-
 2.	Write a Java program to check whether a number is prime.
 Code :
 package javaprograms;
@@ -42,8 +41,6 @@ System.out.print("Enter a number: ");
  }
 }
 
-
- 
 3.	Write a Java program to generate the Fibonacci series. Up to n terms.
 
 Code :
@@ -94,7 +91,8 @@ num=num/10;
 System.out.println("reverse of number: " +sum);
 }
 }
-6.Write a Java program to implement a calculator using a switch case.
+
+Write a Java program to implement a calculator using a switch case.
 Code:
 package javaprograms;
 import java.util.Scanner;
@@ -142,9 +140,6 @@ break; }
 sc.close();          
 }
 } 
- 
-
-
 
 7.	Write a Java program to print a pattern (e.g., pyramid, diamond).
 Code:
@@ -193,8 +188,6 @@ System.out.println();
 }
 
 
-
- 
 8.Write a Java program to find the sum and average of elements in an array.
 Code:
 package javaprograms;
@@ -237,7 +230,6 @@ public class SecondLargestElement {
 }
 }
 
- 
 10.Write a Java program to sort an array using Bubble Sort.
 Code:
 package javaprograms;
@@ -290,6 +282,7 @@ break;
 }
 if (i == arr.length) {
 System.out.println("Number not present in array");}}}
+
 12.Write a Java program to implement a class and create objects.
 Code:
 package javaprograms;
@@ -423,6 +416,7 @@ obj.display(10, 20);
 obj.display("Hello from overloaded method!");
 }
 }
+
 16. Write a Java program to demonstrate use of interfaces.
 Code:
 package javaprograms;
@@ -525,7 +519,6 @@ sc.close();
 }
 }
 
-
 19. .Write a Java program to create and use a custom exception.
 Code:
 package javaprograms;
@@ -546,7 +539,9 @@ try{
 validate(16);
 }catch(Exception m){
 System.out.println("Exception occured: "+m);
-}}}
+}
+}}
+
 20. Write a Java program to read from and write to a text file.
 Code:
 package javaprograms;
@@ -668,6 +663,7 @@ f.setVisible(true);
 f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 }
 }
+
 
 24. Write a Java program to design Login Screen using Swing.
 Code:
@@ -823,7 +819,6 @@ public static void main(String args[]) {
 new SwingCan();
 }}
 
-
 26.write a java program to create a Student information screen.
 Code:
 package javaprograms;
@@ -895,7 +890,6 @@ new student_info_swing();
 }
 }
 
-
 27.Write a JDBC program to Store details of Employees(Empno,Empname,salary,dept). Code:
 package javaprograms;
 import java.sql.*;
@@ -937,8 +931,6 @@ System.out.println("Employee details inserted successfully!");
  e.printStackTrace();
 }}
 }
-
-
 
 28.Write a JDBC program to display details of students on Screen.
 Code:
@@ -1011,7 +1003,6 @@ public static void main(String[] args) {
 new click_button();
 }
 }
-
 
 30.Create menubar with menuItem and menuItemList.
 Code:
@@ -1142,4 +1133,7 @@ public class PopupMenuExample {
         frame.setVisible(true);
     }
 }
+
+
+
 
