@@ -1,1139 +1,1253 @@
-1.	Write a Java program to check whether a number is even or odd
-
-Code:-  
-package javaprograms;
-import java.util.Scanner;
-public class EvenOdd {
-public static void main(String[] args) {
-Scanner sc = new Scanner(System.in);
-System.out.print("Enter a number: ");
-int num = sc.nextInt();
-if (num % 2 == 0) {
-System.out.println(num + " is even.");
-} else {
-System.out.println(num + " is odd.");
-}
-sc.close();
-}
-}
-
-2.	Write a Java program to check whether a number is prime.
-Code :
-package javaprograms;
-import java.util.Scanner;
-public class PrimeCheck {
- public static void main(String[] args) {
- Scanner sc = new Scanner(System.in);
-System.out.print("Enter a number: ");
- int num = sc.nextInt();
-        int count = 0; 
- for (int i = 1; i <= num; i++) {
- if (num % i == 0) {
- count++; 
- }
- }
- if (count == 2) {
- System.out.println(num + " is a Prime number.");
- } else {
- System.out.println(num + " is NOT a Prime number.");
- }
-        sc.close();
- }
-}
-
-3.	Write a Java program to generate the Fibonacci series. Up to n terms.
-
-Code :
-package javaprograms;
-public class FibonacciSeries {
-public static void main(String[] args) {
-
- int n = 10; // number of terms to display
- int first = 0, second = 1;
- System.out.println("Fibonacci Series up to " + n + " terms:");
- for (int i = 1; i <= n; i++) {
- System.out.print(first + " ");
- // calculate the next term
- int next = first + second;
- first = second;
- second = next;
- }
-}
-
-}
-
-4.	Write a Java program to calculate the factorial of a number.
+Practical 1
+Aim: Write an algorithm and draw a flowchart to find the factorial of
+a given number.
 Code:
-package javaprograms;
-public class Factorial {
-public static void main(String[] args) {
-// TODO Auto-generated method stub
-Integer num1=5, fact=6,result=2;
-for(num1=1; num1<=fact; num1++) {
- result=num1*result;
-}
-System.out.println("factorial " +result);
-}
-}
+ num = int(input("Enter a number: "))
+fact = 1
 
-5.	Write a Java program to reverse a number.
+for i in range(1, num + 1):
+    fact = fact * i
+
+print("Factorial:", fact)
+
+
+ Practical 2
+Aim: Write an algorithm and draw a flowchart to find the Fibonacci
+sequence.
 Code:
-package javaprograms;
-public class ReverseNumber {
-public static void main(String[] args) {
-// TODO Auto-generated method stub
-int num=543, rev, sum=0;
-while(num>0) {
-rev=num%10; 
-sum=(sum*10)+rev;
-num=num/10;
-}
-System.out.println("reverse of number: " +sum);
-}
-}
+n = int(input("Enter a number: "))
+a = 0
+b = 1
 
-Write a Java program to implement a calculator using a switch case.
+for i in range(n):
+    print(a)
+    c = a + b
+    a = b
+    b = c
+
+ 
+ Practical 3
+Aim: Write an algorithm and draw a flowchart to find the GCD of a
+two number.
 Code:
-package javaprograms;
-import java.util.Scanner;
-public class Calculator {
-public static void main(String[] args) {
-double num1, num2, result;
-char operator;
-Scanner sc = new Scanner(System.in);
-System.out.print("Enter first number: ");
-num1 = sc.nextDouble();
-System.out.print("Enter second number: ");
-num2 = sc.nextDouble();
-System.out.print("Choose an operator (+, -, *, /, %): ");
-operator = sc.next().charAt(0);
-switch (operator) {
-case '+':
-result = num1 + num2;
-System.out.println("Result = " + result);
-break;
-case '-':
-result = num1 - num2;
-System.out.println("Result = " + result);
-break;
-case '*':
-result = num1 * num2;
-System.out.println("Result = " + result);
-break;
-case '/':
-if (num2 != 0) {
-result = num1 / num2;
-System.out.println("Result = " + result);
-} else {
-System.out.println("Error! Division by zero is not allowed.");
-} break;
-case '%':
-if (num2 != 0) {
-result = num1 % num2;
-System.out.println("Result = " + result);
-} else {
-System.out.println("Error! Division by zero is not allowed.");
-} break;
-default:
-System.out.println("Invalid operator!");
-break; }
-sc.close();          
-}
-} 
+a = int(input("Enter first number: "))
+b = int(input("Enter second number: "))
 
-7.	Write a Java program to print a pattern (e.g., pyramid, diamond).
+while b != 0:
+    a, b = b, a % b
+
+print("GCD is:", a)
+
+
+Practical 4
+Aim: Write an algorithm and draw a flowchart to find the addition of
+the matrix.
 Code:
-package javaprograms;
+ A = [[8,5,3],[4,4,6],[7,8,9]]
+B = [[9,5,7],[6,8,4],[3,8,1]]
+result = [[0,0,0],[0,0,0],[0,0,0]]
 
-public class PatternPrinter {
-public static void main(String[] args) {
-int rows = 5;
-// ---------- Pyramid Pattern ----------
-System.out.println("Pyramid Pattern:\n");
-for (int i = 1; i <= rows; i++) {
-for (int j = i; j < rows; j++) {
-System.out.print(" ");
-}
-for (int k = 1; k <= i; k++) {
-System.out.print("* ");
-}
-System.out.println();
-}
+for i in range(len(A)):
+    for j in range(len(A[0])):
+        result[i][j] = A[i][j] + B[i][j]
 
-// ---------- Diamond Pattern ----------
-System.out.println("\nDiamond Pattern:\n");
-
-// upper part
-for (int i = 1; i <= rows; i++) {
-for (int j = i; j < rows; j++) {
-System.out.print(" ");
-}
-for (int k = 1; k <= i; k++) {
-System.out.print("* ");
-}
-System.out.println();
-}
-
-// lower part
-for (int i = rows - 1; i >= 1; i--) {
-for (int j = rows; j > i; j--) {
-System.out.print(" ");
-}
-for (int k = 1; k <= i; k++) {
-System.out.print("* ");
-}
-System.out.println();
-}
-}
-}
+print("Resultant Matrix after addition:")
+for row in result:
+    print(row)
 
 
-8.Write a Java program to find the sum and average of elements in an array.
+Practical 5
+Aim: Write an algorithm and draw a flowchart to find the
+Multiplication of the matrix.
 Code:
-package javaprograms;
-import java.util.*;
-import java.util.Arrays;
-public class SumAndAverage {
-public static void main(String[] args) {
-    int arr[] = new int[5];
-    double sum=0, average=0.0;
-    Scanner sc = new Scanner(System.in);
-    System.out.print("Enter the array elemant: ");
-    for(int i=0;i<arr.length;i++) {
-    	arr[i]=sc.nextInt();
-    	sum=sum+arr[i];
-    }
-    average=(sum/arr.length);
-    System.out.println("Sum of array elements = " + sum);
-    System.out.println("Average of array elements = " + average);
-}
-}
+A = [[8,5,3],[3,4,6],[5,8,1]]
+B = [[9,5,6],[6,2,4],[3,8,1]]
+result = [[0,0,0],[0,0,0],[0,0,0]]
 
-9.	Write a Java program to find the second largest element in an array.
+for i in range(len(A)):
+    for j in range(len(B[0])):
+        for k in range(len(B)):
+            result[i][j] += A[i][k] * B[k][j]
+
+print("Multiplication:")
+for row in result:
+    print(row)
+
+
+ Practical 7
+Aim: Write an algorithm and draw a flowchart to implement
+singly linked list.
 Code:
-package javaprograms;
-import java.util.*;
-import java.util.Arrays;
-public class SecondLargestElement {
-    public static void main(String[] args) {
-    	    int arr[] = new int[5];
-    	    double sum=0, average=0.0;
-    	    Scanner sc = new Scanner(System.in);
-        System.out.print("Enter the array element: ");
-        for(int i=0; i<arr.length; i++) {
-        	arr[i]=sc.nextInt();
-        }
-        Arrays.sort(arr);
-        System.out.println("my array elemant are " + Arrays.toString(arr));
-        System.out.println("The second largest element = " +arr[arr.length-2]);
-        sc.close();
-}
-}
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
 
-10.Write a Java program to sort an array using Bubble Sort.
+# Singly Linked List Class
+class SinglyLinkedList:
+    def __init__(self):
+        self.head = None
+
+    def insert(self, data):
+        new_node = Node(data)
+        if not self.head:
+            self.head = new_node
+        else:
+            temp = self.head
+            while temp.next:
+                temp = temp.next
+            temp.next = new_node
+
+    def delete(self, key):
+        temp = self.head
+        if temp and temp.data == key:
+            self.head = temp.next
+            return
+        prev = None
+        while temp and temp.data != key:
+            prev = temp
+            temp = temp.next
+        if temp:
+            prev.next = temp.next
+
+    def display(self):
+        temp = self.head
+        while temp:
+            print(temp.data, end=" -> ")
+            temp = temp.next
+        print("None")
+
+# Example
+sll = SinglyLinkedList()
+sll.insert(10)
+sll.insert(20)
+sll.insert(30)
+print("List after insertion:")
+sll.display()
+sll.delete(20)
+print("List after deleting 20:")
+sll.display()
+
+
+Practical 8
+Aim: Write an algorithm and draw a flowchart to implement doubly linked list.
 Code:
-package javaprograms;
-import java.io.*;
-public class BubbleSort {
-public static void main(String[] args) throws IOException {
-int arr[] = new int[5];
-int temp;
-BufferedReader br= new BufferedReader(new InputStreamReader(System.in));
-System.out.println("Enter the array element:");
-for (int i=0;i<arr.length;i++) {
-arr[i]=Integer.parseInt(br.readLine());
-}	
-for (int i = 0; i < arr.length - 1; i++) {
- for (int j = 0; j < arr.length - i - 1; j++) {
- if (arr[j] > arr[j + 1]) {
- temp = arr[j];
- arr[j] = arr[j + 1];
- arr[j + 1] = temp;
-}
-}
- }
-System.out.println("Sorted array:");
-for (int i=0;i<arr.length;i++) {
-System.out.println(arr[i] + "");
-}
-}
-}
+# Node class for Doubly Linked list
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.prev = None
+        self.next = None
 
-11.Write a Java program to search an element in an array using Linear Search.
+# Doubly Linked List Class
+class DoublyLinkedList:
+    def __init__(self):
+        self.head = None
+        self.tail = None
+
+    # insert at beginning
+    def insert_at_beginning(self, data):
+        new_node = Node(data)
+        if self.head is None:
+            self.head = self.tail = new_node
+        else:
+            new_node.next = self.head
+            self.head.prev = new_node
+            self.head = new_node
+
+    # insert at end
+    def insert_at_end(self, data):
+        new_node = Node(data)
+        if self.tail is None:
+            self.head = self.tail = new_node
+        else:
+            self.tail.next = new_node
+            new_node.prev = self.tail
+            self.tail = new_node
+
+    # delete from beginning
+    def delete_from_beginning(self):
+        if self.head is None:
+            print("List is empty , cannot delete.")
+            return
+        if self.head == self.tail:
+            self.head = self.tail = None
+        else:
+            self.head = self.head.next
+            self.head.prev = None
+
+    # delete from end
+    def delete_from_end(self):
+        if self.tail is None:
+            print("List is empty,cannot delete.")
+            return
+        if self.head == self.tail:
+            self.head = self.tail = None
+        else:
+            self.tail = self.tail.prev
+            self.tail.next = None
+
+    # display forward
+    def display_forward(self):
+        current = self.head
+        print("List (forward):", end=" ")
+        while current:
+            print(current.data, end="<->")
+            current = current.next
+        print("None")
+
+    # display backward
+    def display_backward(self):
+        current = self.tail
+        print("List (backward):", end=" ")
+        while current:
+            print(current.data, end="<->")
+            current = current.prev
+        print("None")
+
+# example usage
+d11 = DoublyLinkedList()
+d11.insert_at_beginning(10)
+d11.insert_at_end(20)
+d11.insert_at_beginning(5)
+d11.insert_at_end(30)
+d11.display_forward()
+d11.display_backward()
+d11.delete_from_beginning()
+d11.delete_from_end()
+d11.display_forward()
+d11.display_backward()
+
+
+
+Practical 9
+Aim: Write an algorithm and draw a flowchart to implement Circular linked list.
 Code:
-package javaprograms;
-import java.util.Scanner;
-public class SearchElement {
-public static void main(String[] args) {
-int arr[] = new int[5];
-int Search, i;
-Scanner sc = new Scanner(System.in);
-System.out.print("Enter the array elements: ");
-for (i = 0; i < arr.length; i++) {
-arr[i] = sc.nextInt();
-}
-System.out.println("Enter the element you want to search: ");
-Search = sc.nextInt();
-for (i = 0; i < arr.length; i++) {
-if (arr[i] == Search) {
-System.out.println("The number found at " + (i + 1) + " position");
-break; 
-}
-}
-if (i == arr.length) {
-System.out.println("Number not present in array");}}}
+# Node class for circular Linked list
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
 
-12.Write a Java program to implement a class and create objects.
+# circular Linked List Class
+class CircularLinkedList:
+    def __init__(self):
+        self.head = None
+
+    # function to insert a new node at the end of circular list
+    def insert(self, data):
+        new_node = Node(data)
+        if not self.head:
+            self.head = new_node
+            new_node.next = self.head
+        else:
+            temp = self.head
+            while temp.next != self.head:
+                temp = temp.next
+            temp.next = new_node
+            new_node.next = self.head
+
+    # function to traverse and display the list
+    def traverse(self):
+        if not self.head:
+            print("The circular linked list is empty.")
+            return
+        temp = self.head
+        print("Circular Linked List Traversal:", end=" ")
+        while True:
+            print(temp.data, end=" ")
+            temp = temp.next
+            if temp == self.head:
+                break
+        print()
+
+# Create a circular linked list
+c11 = CircularLinkedList()
+# insert elements into the list
+c11.insert(10)
+c11.insert(20)
+c11.insert(5)
+c11.insert(30)
+# traverse and display elements of circular list
+c11.traverse()
+
+
+Practical 10
+Aim: Write an algorithm and draw a flowchart to implement stack
+using array.
 Code:
-package javaprograms;
-public class MethodOverloading {
-// Method with one parameter
-void display(int a) {
-System.out.println("Method with one integer parameter: " + a);
-}
-// Method with two parameters
-void display(int a, int b) {
-System.out.println("Method with two integer parameters: " + a + " and " + b);
-}
-// Method with different parameter type
-void display(String message) {
-System.out.println("Method with one String parameter: " + message);
-}
-public static void main(String[] args) {
-MethodOverloading obj = new MethodOverloading();
-// Calling different overloaded methods
-obj.display(10);
-obj.display(10, 20);
-obj.display("Hello from overloaded method!");
-}
-}
+class StackArray:
+    def __init__(self):
+        # Initialize an empty list to represent the stack
+        self.stack = []
 
-13. Write a Java program to demonstrate constructor overloading.
+    # Method to push (insert) element onto the stack
+    def push(self, data):
+        # Append element at the end (top of stack)
+        self.stack.append(data)
+
+    # Method to pop (remove) the top element from the stack
+    def pop(self):
+        # Check if stack is empty before popping
+        if self.is_empty():
+            print("Stack Underflow! Cannot pop.")  # Error message
+            return None
+        # Remove and return the last element
+        return self.stack.pop()
+
+    # Method to see the top element without removing it
+    def peek(self):
+        # If stack is empty, print message
+        if self.is_empty():
+            print("Stack is empty.")
+            return None
+        # Return the last element (top of stack)
+        return self.stack[-1]
+
+    # Method to check if stack is empty
+    def is_empty(self):
+        # Returns True if length is 0, else False
+        return len(self.stack) == 0
+
+    # Method to display stack elements
+    def display(self):
+        # Print stack from top to bottom by reversing list
+        print("Stack (top -> bottom):", self.stack[::-1])
+
+# Example usage of Stack
+print("=== Stack using Array ===")  # Heading
+s1 = StackArray()  # Create an object of StackArray
+s1.push(10)  # Push 10 onto stack
+s1.push(20)  # Push 20 onto stack
+s1.push(30)  # Push 30 onto stack
+s1.display()  # Display current stack
+print("Popped:", s1.pop())  # Pop the top element (30)
+s1.display()  # Display stack after popping
+
+
+
+Practical 11
+Aim: Write an algorithm and draw a flowchart to implement stack
+using array.
 Code:
-package javaprograms;
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
 
-public class CarExample {
-String model;
-int year;
-// Default Constructor
-public CarExample() {
-model = "";
-year = 0;
-}
-// Constructor with one parameter
-public CarExample(String model) {
-this.model = model;
-this.year = 2020;
-}
-// Constructor with two parameters
-public CarExample(String model, int year) {
-this.model = model;
-this.year = year;
-}
-// Display method
-public void display() {
-System.out.println("Model: " + model + " | Year: " + year);
-}
-// Main method
-public static void main(String[] args) {
-CarExample obj1 = new CarExample();
-CarExample obj2 = new CarExample("Tata Safari");
-CarExample obj3 = new CarExample("Tata Harrier", 2024);
-obj1.display();
-obj2.display();
-obj3.display();
-}
-}
+class StackLinkedList:
+    def __init__(self):
+        self.top = None
+
+    def push(self, data):
+        new_node = Node(data)
+        new_node.next = self.top
+        self.top = new_node
+
+    def pop(self):
+        if self.is_empty():
+            print("Stack Underflow! Cannot pop.")
+            return None
+        popped_data = self.top.data
+        self.top = self.top.next
+        return popped_data
+
+    def peek(self):
+        if self.is_empty():
+            print("Stack is Empty.")
+            return None
+        return self.top.data
+
+    def is_empty(self):
+        return self.top is None
+
+    def display(self):
+        current = self.top
+        print("Stack (top -> bottom):", end=" ")
+        while current:
+            print(current.data, end="->")
+            current = current.next
+        print("None")
+
+print("\n===Stack using Linked List ===")
+s2 = StackLinkedList()
+s2.push(100)
+s2.push(200)
+s2.push(300)
+s2.display()
+print("Popped:", s2.pop())
+s2.display()
 
 
-14. Write a Java program to demonstrate Single Inheritance.
+Practical 12
+Aim: Write an algorithm and flowchart to implement tower of Hanoi.
 Code:
-package javaprograms;
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-class vehicle{
-int tyre,ecap;
-    String color;
-    public void getvehicleDetails() throws IOException{
-    	BufferedReader br=new BufferedReader (new InputStreamReader(System.in));
-    	System.out.println("Enter No. of tyre , engine capacity , color");
-    	tyre=Integer.parseInt(br.readLine());
-    	ecap=Integer.parseInt(br.readLine());
-    	color=br.readLine();
-    }
-    public void putvehicleDetails() {
-    	System.out.println("no. of tyres: "+tyre);
-    	System.out.println("Engine capacity: "+ecap);
-    	System.out.println("Color: "+color);
-    }}
-class Car1 extends vehicle{
- String comp,ctype,fuel;
- public void getCarDetails() throws IOException{
- BufferedReader br=new BufferedReader (new InputStreamReader(System.in));
- System.out.println("Enter the comp , ctype, fuel");
- comp=br.readLine();
- ctype=br.readLine();
- fuel=br.readLine();
- }
- public void putCarDetails() {
-    	System.out.println("Enter company name: "+comp);
-    	System.out.println("enter car type: "+ctype);
-    	System.out.println("Enter fuel: "+fuel);
-    }
-}
-public class InheritanceExample1 {
-public static void main(String[] args) throws IOException{
-     Car1 obj=new Car1();
-     obj.getvehicleDetails();
-     obj.putvehicleDetails();
-     obj.getCarDetails();
-     obj.putCarDetails();
-}
-}
+def hanoi(n, source, target, auxiliary):
+    if n == 1:
+        print(f"Move disk 1 from {source} to {target}")
+        return
 
-15.Write a Java program to implement method overloading.
+    hanoi(n - 1, source, auxiliary, target)
+    print(f"Move disk {n} from {source} to {target}")
+    hanoi(n - 1, auxiliary, target, source)
+
+hanoi(3, 'A', 'C', 'B')
+
+
+Practical 13
+Aim:Write an algorithm and flowchart to implement Queue through array.
 Code:
-package javaprograms;
-public class MethodOverloading {
-// Method with one parameter
-void display(int a) {
-System.out.println("Method with one integer parameter: " + a);
-}
-// Method with two parameters
-void display(int a, int b) {
-System.out.println("Method with two integer parameters: " + a + " and " + b);
-}
-// Method with different parameter type
-void display(String message) {
-System.out.println("Method with one String parameter: " + message);
-}
-public static void main(String[] args) {
-MethodOverloading obj = new MethodOverloading();
-// Calling different overloaded methods
-obj.display(10);
-obj.display(10, 20);
-obj.display("Hello from overloaded method!");
-}
-}
+class QueueArray:
+    def __init__(self):
+        self.queue = []
 
-16. Write a Java program to demonstrate use of interfaces.
+    def enqueue(self, item):
+        self.queue.append(item)
+
+    def dequeue(self):
+        if self.is_empty():
+            return "Queue is empty!"
+        return self.queue.pop(0)
+
+    def peek(self):
+        if self.is_empty():
+            return "Queue is empty!"
+        return self.queue[0]
+
+    def is_empty(self):
+        return len(self.queue) == 0
+
+    def display(self):
+        print("Queue:", self.queue)
+
+print("Queue using Array")
+qa = QueueArray()
+qa.enqueue(10)
+qa.enqueue(20)
+qa.enqueue(30)
+qa.display()
+print("Dequeued:", qa.dequeue())
+
+
+Practical 14
+Aim:Write an algorithm and flowchart to implement Queue through linklist.
 Code:
-package javaprograms;
-interface Animal{
-void activity();
-void run();
-void eat();
-void sleep();
-}
-class cat implements Animal{
-public void activity () {
-System.out.println("Activity of the animal");}
-public void run() {
-System.out.println("Animals can run");
-}
-public void eat() {
-System.out.println("Animals can eat");
-}
-public void sleep() {
-System.out.println("Animals can sleep");
-} 	}
-public class InterfacesMultiInherit { 	
-public static void main(String[] args) {
-cat c = new cat();
-c.activity();
-c.eat();
- c.run();
-c.sleep();
-}
-}
+class Node:
+    def __init__(self, data):
+        self.data = data  # store the data
+        self.next = None  # pointer to next node
 
-17. Write a Java program to demonstrate use of packages.
-Code 1:
-package javaprograms;
+class QueueLinkedList:
+    def __init__(self):
+        # Initialize empty queue with no front or rear
+        self.front = self.rear = None
 
-public class MessagePrinter {
-public void printMessage() {
-System.out.println("Hello from the package!!");
-}
-}
+    def enqueue(self, item):
+        """Insert item at the rear of the queue"""
+        new_node = Node(item)  # create a new node
+        if self.rear is None:  # if queue is empty
+            self.front = self.rear = new_node
+            return
+        # link new node at the end of the queue
+        self.rear.next = new_node
+        # make new node the rear
+        self.rear = new_node
 
-Code 2:
-package javaprograms;
-public class MainClass {
-public static void main(String[] args) {
-MessagePrinter printer = new MessagePrinter();
-printer.printMessage();
-}
-}
+    def dequeue(self):
+        """Remove and return the front item"""
+        if self.front is None:
+            return "Queue is empty!"
+        temp = self.front
+        # move front to the next node
+        self.front = temp.next
 
-18. Write a Java program to handle ArithmeticException.
+        # if queue becomes empty, set rear to None
+        if self.front is None:
+            self.rear = None
+        return temp.data
+
+    def peek(self):
+        """Return the front element without removing"""
+        if self.front is None:
+            return "Queue is empty!"
+        return self.front.data
+
+    def is_empty(self):
+        """Check if queue is empty"""
+        return self.front is None
+
+    def display(self):
+        """Traverse and display the queue"""
+        if self.front is None:
+            print("Queue is empty!")
+            return
+        temp = self.front
+        while temp:
+            print(temp.data, end=" <- ")
+            temp = temp.next
+        print("None")
+
+# Example usage
+print("Queue using Linked List")
+ql = QueueLinkedList()
+ql.enqueue(10)  # Add 10
+ql.enqueue(20)  # Add 20
+ql.enqueue(30)  # Add 30
+ql.display()    # 10 <- 20 <- 30 <- None
+print("Dequeued:", ql.dequeue())  # Removes 10
+ql.display()    # 20 <- 30 <- None
+
+Practical 15
+Aim – Implement priority queue using array or linked list.
+Code –
+class PriorityQueue:
+    def __init__(self):
+        self.queue = []
+
+    def insert(self, element, priority):
+        self.queue.append((element, priority))
+
+    def delete(self):
+        if not self.queue:
+            print("Queue is empty!")
+            return
+
+        # Find element with highest priority (lowest number = highest priority)
+        min_priority_index = 0
+        for i in range(len(self.queue)):
+            if self.queue[i][1] < self.queue[min_priority_index][1]:
+                min_priority_index = i
+
+        element = self.queue.pop(min_priority_index)
+        print(f"Deleted element: {element[0]} (priority={element[1]})")
+
+    def display(self):
+        if not self.queue:
+            print("Queue is empty!")
+        else:
+            print("Priority Queue:")
+            for item in self.queue:
+                print(f"{item[0]} (priority={item[1]})")
+
+# Example usage
+pq = PriorityQueue()
+pq.insert("A", 3)
+pq.insert("B", 1)
+pq.insert("C", 2)
+pq.display()
+pq.delete()
+pq.display()
+
+
+Practical 16
+Aim - Implement binary tree and perform inorder,preorder,postorder
+traversal.
+Code –
+class node:
+    def __init__(self, data):
+        self.data = data
+        self.left = None
+        self.right = None
+
+class binarytree:
+    def __init__(self):
+        self.root = None
+
+    def inorder(self, node):
+        if node:
+            self.inorder(node.left)
+            print(node.data, end='')
+            self.inorder(node.right)
+
+    def preorder(self, node):
+        if node:
+            print(node.data, end='')
+            self.preorder(node.left)
+            self.preorder(node.right)
+
+    def postorder(self, node):
+        if node:
+            self.postorder(node.left)
+            self.postorder(node.right)
+            print(node.data, end='')
+
+tree = binarytree()
+tree.root = node(1)
+tree.root.left = node(2)
+tree.root.right = node(3)
+tree.root.left.left = node(4)
+tree.root.left.right = node(5)
+
+print("inorder traversal")
+tree.inorder(tree.root)
+print("\npreorder traversal")
+tree.preorder(tree.root)
+print("\npostorder traversal")
+tree.postorder(tree.root)
+
+
+Practical 17
+Aim - Implement Binary Search tree and perform insert ,delete , and search
+operations
+Code –
+class Node:
+    def __init__(self, key):
+        self.key = key
+        self.left = None
+        self.right = None
+
+class BST:
+    def __init__(self):
+        self.root = None
+
+    # Insert operation
+    def insert(self, root, key):
+        if root is None:
+            return Node(key)
+        if key < root.key:
+            root.left = self.insert(root.left, key)
+        elif key > root.key:
+            root.right = self.insert(root.right, key)
+        return root
+
+    # Search operation
+    def search(self, root, key):
+        if root is None or root.key == key:
+            return root
+        if key < root.key:
+            return self.search(root.left, key)
+        return self.search(root.right, key)
+
+    # Delete operation
+    def delete(self, root, key):
+        if root is None:
+            return root
+        if key < root.key:
+            root.left = self.delete(root.left, key)
+        elif key > root.key:
+            root.right = self.delete(root.right, key)
+        else:
+            # Node with one or no child
+            if root.left is None:
+                return root.right
+            elif root.right is None:
+                return root.left
+
+            # Node with two children — get inorder successor
+            min_node = self.get_min_value_node(root.right)
+            root.key = min_node.key
+            root.right = self.delete(root.right, min_node.key)
+        return root
+
+    # Get the smallest value in the tree
+    def get_min_value_node(self, node):
+        current = node
+        while current.left is not None:
+            current = current.left
+        return current
+
+    # Inorder traversal (sorted order)
+    def inorder(self, root):
+        if root:
+            self.inorder(root.left)
+            print(root.key, end=" ")
+            self.inorder(root.right)
+
+if __name__ == "__main__":
+    tree = BST()
+    root = None
+
+    # Insert nodes
+    for key in [50, 34, 25, 78, 11, 90, 49]:
+        root = tree.insert(root, key)
+
+    print("Inorder traversal (should be sorted):")
+    tree.inorder(root)
+    print("\n")
+
+    # Search a key
+    key_to_search = int(input("Enter key to search: "))
+    result = tree.search(root, key_to_search)
+    if result:
+        print(f"Key {key_to_search} found in the BST.")
+    else:
+        print(f"Key {key_to_search} not found in the BST.")
+
+    # Delete a key
+    key_to_delete = int(input("\nEnter key to delete: "))
+    root = tree.delete(root, key_to_delete)
+    print(f"\nAfter deleting {key_to_delete}, inorder traversal:")
+    tree.inorder(root)
+    print()
+
+
+Practical 18
+Aim - Implement AVL tree and demonstrate rotations
+Code –
+class Node:
+    def __init__(self, key):
+        self.key = key
+        self.left = None
+        self.right = None
+        self.height = 1
+
+class AVLTree:
+    def get_height(self, root):
+        if not root:
+            return 0
+        return root.height
+
+    def get_balance(self, root):
+        if not root:
+            return 0
+        return self.get_height(root.left) - self.get_height(root.right)
+
+    def right_rotate(self, y):
+        x = y.left
+        T2 = x.right
+
+        x.right = y
+        y.left = T2
+
+        y.height = 1 + max(self.get_height(y.left), self.get_height(y.right))
+        x.height = 1 + max(self.get_height(x.left), self.get_height(x.right))
+
+        return x
+
+    def left_rotate(self, x):
+        y = x.right
+        T2 = y.left
+
+        y.left = x
+        x.right = T2
+
+        x.height = 1 + max(self.get_height(x.left), self.get_height(x.right))
+        y.height = 1 + max(self.get_height(y.left), self.get_height(y.right))
+
+        return y
+
+    def insert(self, root, key):
+        if not root:
+            return Node(key)
+        elif key < root.key:
+            root.left = self.insert(root.left, key)
+        elif key > root.key:
+            root.right = self.insert(root.right, key)
+        else:
+            return root
+
+        root.height = 1 + max(self.get_height(root.left),
+                              self.get_height(root.right))
+
+        balance = self.get_balance(root)
+
+        if balance > 1 and key < root.left.key:
+            return self.right_rotate(root)
+
+        if balance < -1 and key > root.right.key:
+            return self.left_rotate(root)
+
+        if balance > 1 and key > root.left.key:
+            root.left = self.left_rotate(root.left)
+            return self.right_rotate(root)
+
+        if balance < -1 and key < root.right.key:
+            root.right = self.right_rotate(root.right)
+            return self.left_rotate(root)
+
+        return root
+
+    def get_min_value_node(self, root):
+        if root is None or root.left is None:
+            return root
+        return self.get_min_value_node(root.left)
+
+    def delete(self, root, key):
+        if not root:
+            return root
+        elif key < root.key:
+            root.left = self.delete(root.left, key)
+        elif key > root.key:
+            root.right = self.delete(root.right, key)
+        else:
+            if root.left is None:
+                return root.right
+            elif root.right is None:
+                return root.left
+
+            temp = self.get_min_value_node(root.right)
+            root.key = temp.key
+            root.right = self.delete(root.right, temp.key)
+
+        if root is None:
+            return root
+
+        root.height = 1 + max(self.get_height(root.left),
+                              self.get_height(root.right))
+
+        balance = self.get_balance(root)
+
+        if balance > 1 and self.get_balance(root.left) >= 0:
+            return self.right_rotate(root)
+
+        if balance > 1 and self.get_balance(root.left) < 0:
+            root.left = self.left_rotate(root.left)
+            return self.right_rotate(root)
+
+        if balance < -1 and self.get_balance(root.right) <= 0:
+            return self.left_rotate(root)
+
+        if balance < -1 and self.get_balance(root.right) > 0:
+            root.right = self.right_rotate(root.right)
+            return self.left_rotate(root)
+
+        return root
+
+    def inorder(self, root):
+        if not root:
+            return
+        self.inorder(root.left)
+        print(root.key, end=" ")
+        self.inorder(root.right)
+
+if __name__ == "__main__":
+    tree = AVLTree()
+    root = None
+
+    nums = [10, 20, 30, 40, 50, 25]
+    for num in nums:
+        root = tree.insert(root, num)
+
+    print("Inorder traversal after insertions:")
+    tree.inorder(root)
+    print()
+
+    root = tree.delete(root, 40)
+    print("Inorder traversal after deleting 40:")
+    tree.inorder(root)
+    print()
+
+
+Practical 20
+Aim: Write an algorithm and draw a flowchart to implement BFS and DFS.
 Code:
-package javaprograms;
-import java.util.Scanner;
-public class Arithmetic {
-public static void main(String[] args) {
-double num1, num2, result;
-char operator;
-Scanner sc = new Scanner(System.in);
-System.out.print("Enter first number: ");
-num1 = sc.nextDouble();
-System.out.print("Enter second number: ");
-num2 = sc.nextDouble();
-System.out.print("Choose an operator (+, -, *, /, %): ");
-operator = sc.next().charAt(0);
-switch (operator) {
-case '+':
-result = num1 + num2;
-System.out.println("Result = " + result);
-break;
-case '-':
-result = num1 - num2;
-System.out.println("Result = " + result);
-break;
-case '*':
-result = num1 * num2;
-System.out.println("Result = " + result);
-break;
-case '/':
-if (num2 != 0) {
-result = num1 / num2;
-System.out.println("Result = " + result);
-} else {
-System.out.println("Error! Division by zero is not allowed.");
-}
-break;
-case '%':
-if (num2 != 0) {
-result = num1 % num2;
-System.out.println("Result = " + result);
-} else {
-System.out.println("Error! Division by zero is not allowed.");
-}
-break;
-default:
-System.out.println("Invalid operator!");
-break;
-}
-sc.close();
-}
-}
+from collections import deque
 
-19. .Write a Java program to create and use a custom exception.
+class Graph:
+    def __init__(self):
+        self.graph = {}
+
+    def add_edge(self, u, v):
+        if u not in self.graph:
+            self.graph[u] = []
+        if v not in self.graph:
+            self.graph[v] = []
+        self.graph[u].append(v)
+        self.graph[v].append(u)
+
+    # Breadth First Search
+    def bfs(self, start):
+        visited = set()
+        queue = deque([start])
+        visited.add(start)
+        print("BFS Traversal:", end="")
+        while queue:
+            vertex = queue.popleft()
+            print(vertex, end=" ")
+            for neighbor in self.graph[vertex]:
+                if neighbor not in visited:
+                    visited.add(neighbor)
+                    queue.append(neighbor)
+        print()
+
+    # Depth First Search
+    def dfs(self, start):
+        visited = set()
+        print("DFS Traversal:", end=" ")
+        self._dfs_recursive(start, visited)
+        print()
+
+    def _dfs_recursive(self, vertex, visited):
+        visited.add(vertex)
+        print(vertex, end=" ")
+        for neighbor in self.graph[vertex]:
+            if neighbor not in visited:
+                self._dfs_recursive(neighbor, visited)
+
+if __name__ == "__main__":
+    g = Graph()
+    g.add_edge(0, 1)
+    g.add_edge(0, 2)
+    g.add_edge(1, 3)
+    g.add_edge(1, 4)
+    g.add_edge(2, 5)
+    g.add_edge(3, 6)
+
+    print("Adjacency List Representation:")
+    for vertex in g.graph:
+        print(f"{vertex} -> {g.graph[vertex]}")
+    print()
+
+    g.bfs(0)
+    g.dfs(0)
+
+Practical 20
+Aim: Write an algorithm and draw a flowchart to implement BFS and DFS.
 Code:
-package javaprograms;
-class InvalidAgeException extends Exception{
-InvalidAgeException(String s){
-super(s);
-}
-}
-public class UserException {
-static void validate(int age)throws InvalidAgeException{
-if(age<18)
-throw new InvalidAgeException("sorry you cant vote your age is below 18");
-else
-System.out.println("congrats you are above 18, you are eligible for vote");
-}
-public static void main(String args[]){
-try{
-validate(16);
-}catch(Exception m){
-System.out.println("Exception occured: "+m);
-}
-}}
+import sys  # For using system max size as infinite
 
-20. Write a Java program to read from and write to a text file.
+class Graph:
+    def __init__(self, vertices):
+        self.V = vertices  # Number of vertices
+        self.graph = [[0 for _ in range(vertices)] for _ in range(vertices)]  # Adjacency matrix
+
+    # Function to print the constructed MST
+    def print_mst(self, parent):
+        print("Edge \tWeight")
+        for i in range(1, self.V):
+            print(f"{parent[i]} - {i} \t{self.graph[i][parent[i]]}")
+
+    # Function to find the vertex with the minimum key value
+    def min_key(self, key, mst_set):
+        min_val = sys.maxsize
+        min_index = -1
+        for v in range(self.V):
+            if key[v] < min_val and not mst_set[v]:
+                min_val = key[v]
+                min_index = v
+        return min_index
+
+    # Function to construct MST using Prim's algorithm
+    def prim_mst(self):
+        key = [sys.maxsize] * self.V
+        parent = [None] * self.V
+        key[0] = 0
+        mst_set = [False] * self.V
+        parent[0] = -1
+
+        for _ in range(self.V):
+            u = self.min_key(key, mst_set)
+            mst_set[u] = True
+
+            for v in range(self.V):
+                if self.graph[u][v] > 0 and not mst_set[v] and key[v] > self.graph[u][v]:
+                    key[v] = self.graph[u][v]
+                    parent[v] = u
+
+        self.print_mst(parent)
+
+# ------------------ Main Program ------------------
+if __name__ == "__main__":
+    g = Graph(5)
+    g.graph = [
+        [0, 2, 0, 6, 0],
+        [2, 0, 3, 8, 5],
+        [0, 3, 0, 0, 7],
+        [6, 8, 0, 0, 9],
+        [0, 5, 7, 9, 0]
+    ]
+    g.prim_mst()
+
+Practical 21
+Aim: Implement Dijkstra’s algorithm for finding shortest path.
 Code:
-package javaprograms;
-import java.io.*;
-public class CharReadExample {
-public static void main(String[] args) {
-try {
-FileReader reader = new FileReader("D:\\java\\javaprograms\\src\\javaprograms\\input.txt");
-int ch;
-while ((ch = reader.read()) != -1) {
-System.out.print((char) ch);
-}
-reader.close();
-FileWriter writer = new FileWriter("D:\\java\\javaprograms\\src\\javaprograms\\input.txt");
-writer.write("additional contents into the file");
-writer.close();
-} catch (IOException e) {
-System.out.println("An error occured while reading the file");
-}
+import sys  # Import sys module to use sys.maxsize (represents infinity)
 
-}
-}
+# Define a class to represent the graph
+class Graph:
+    def __init__(self, vertices):
+        # Initialize number of vertices in the graph
+        self.V = vertices
+        # Create a 2D list (adjacency matrix) to store graph weights
+        self.graph = [[0 for column in range(vertices)] for row in range(vertices)]
 
-21. Write a Java program to copy content from one file to another.
-Code: 
-package javaprograms;
-import java.io.*;
-public class copyChar {
-public static void main(String[] args) throws IOException {
-FileReader reader = new FileReader("D:\\java\\javaprograms\\src\\javaprograms\\input.txt");
- FileWriter writer = new FileWriter("D:\\java\\javaprograms\\src\\javaprograms\\output.txt");
-int ch;
-while((ch = reader.read()) != -1) {
-writer.write(ch);
-}
-System.out.println("File contents are copied");
- reader.close();
- writer.close();
-}
-}
+    # Function to print the final shortest distances from source to each vertex
+    def print_solution(self, dist):
+        print("Vertex \t At distance from Source")
+        for node in range(self.V):
+            print(node, "\t\t", dist[node])
 
-22. Write a Java program to create a basic AWT form.
+    # Function to find the vertex with the minimum distance value
+    # from the set of vertices not yet processed
+    def min_distance(self, dist, spt_set):
+        min_val = sys.maxsize
+        min_index = -1
+
+        for v in range(self.V):
+            if dist[v] < min_val and spt_set[v] == False:
+                min_val = dist[v]
+                min_index = v
+        return min_index
+
+    # Function that implements Dijkstra's shortest path algorithm
+    def dijkstra(self, src):
+        dist = [sys.maxsize] * self.V
+        dist[src] = 0
+        spt_set = [False] * self.V
+
+        for _ in range(self.V):
+            u = self.min_distance(dist, spt_set)
+            spt_set[u] = True
+
+            for v in range(self.V):
+                if (self.graph[u][v] > 0 and
+                    spt_set[v] == False and
+                    dist[v] > dist[u] + self.graph[u][v]):
+                    dist[v] = dist[u] + self.graph[u][v]
+
+        self.print_solution(dist)
+
+# DRIVER CODE
+g = Graph(9)
+
+g.graph = [
+    [0, 4, 0, 0, 0, 0, 0, 8, 0],
+    [4, 0, 8, 0, 0, 0, 0, 11, 0],
+    [0, 8, 0, 7, 0, 4, 0, 0, 2],
+    [0, 0, 7, 0, 9, 14, 0, 0, 0],
+    [0, 0, 0, 9, 0, 10, 0, 0, 0],
+    [0, 0, 4, 14, 10, 0, 2, 0, 0],
+    [0, 0, 0, 0, 0, 2, 0, 1, 6],
+    [8, 11, 0, 0, 0, 0, 1, 0, 7],
+    [0, 0, 2, 0, 0, 0, 6, 7, 0]
+]
+
+g.dijkstra(0)
+
+
+Practical 22
+Aim: Implement Bubble Sort.
 Code:
-package javaprograms;
-import javax.swing.*;
-public class MyFrame {
-public static void main(String[] args) {
-JFrame frameObj = new JFrame("java swing fame");
-JTextField textObject = new JTextField("vishal thakur");
-textObject.setBounds(200,100,200,50);
-frameObj.add(textObject);
-frameObj.setSize(500,500);
-frameObj.setLayout(null);
-frameObj.setVisible(true);
-}
-}
+def bubble_sort(arr):
+    """
+    Sorts a list of comparable elements using the Bubble Sort algorithm.
+    Args:
+        arr (list): The list to be sorted.
+    """
+    n = len(arr)
 
-23. Write a Java program to implement a simple calculator using AWT/Swing.
+    # Traverse through all array elements
+    for i in range(n):
+        # Flag to optimize the sort: if no two elements were swapped
+        swapped = False
+
+        # Last i elements are already in place
+        for j in range(0, n - i - 1):
+            # Compare the adjacent elements
+            if arr[j] > arr[j + 1]:
+                # Swap them if they are in the wrong order
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+                swapped = True
+
+        # If no two elements were swapped, array is sorted
+        if not swapped:
+            break
+
+# --- Example Usage ---
+my_list = [40, 20, 75, 2, 55, 10, 5]
+print(f"Original list: {my_list}")
+bubble_sort(my_list)
+print(f"Sorted list: {my_list}")
+
+Practical No.-23
+Aim: - Write a python program to perform Selection Sort.
 Code:
-package javaprograms;
-import java.awt.event.*;
-import javax.swing.*;
-public class Swing_Calcultor {
-public static void main(String[] args) {
-JFrame f = new JFrame("burrron example");
-final JTextField tf1 = new JTextField ("enetr the first value");
-final JTextField tf2 = new JTextField ("enetr the second value");
-final JTextField tf3 = new JTextField ("result");
-JButton plus = new JButton("+");
-JButton minus = new JButton("-");
-JButton multiply = new JButton("*");
-JButton divide = new JButton("/");
-f.setLayout(new java.awt.GridLayout(7,1));
-plus.addActionListener(new ActionListener() {
- 	 String res;
- 	 public void actionPerformed(ActionEvent e) {
- 	 int first=Integer.parseInt(tf1.getText());
- 	 int second=Integer.parseInt(tf2.getText());
- 	 res = String.valueOf(first+second);
- 	 tf3.setText(res);
- 	 }
-});
-minus.addActionListener(new ActionListener() {
- 	 String res;
- 	 public void actionPerformed(ActionEvent e) {
- 	 int first=Integer.parseInt(tf1.getText());
- 	 int second=Integer.parseInt(tf2.getText());
- 	 res = String.valueOf(first-second);
- 	 tf3.setText(res);
- 	 }
-});
-multiply.addActionListener(new ActionListener() {
- 	 String res;
- 	 public void actionPerformed(ActionEvent e) {
- 	 int first=Integer.parseInt(tf1.getText());
- 	 int second=Integer.parseInt(tf2.getText());
- 	 res = String.valueOf(first*second);
- 	 tf3.setText(res);
- 	 }
-});
-divide.addActionListener(new ActionListener() {
- 	 String res;
- 	 public void actionPerformed(ActionEvent e) {
- 	 int first=Integer.parseInt(tf1.getText());
- 	 int second=Integer.parseInt(tf2.getText());
- 	 res = String.valueOf(first/second);
- 	 tf3.setText(res);
- 	 }
-});
-f.add(plus);
-f.add(minus);
-f.add(multiply);
-f.add(divide);
-f.add(tf1);
-f.add(tf2); 	
-f.add(tf3);
-f.setSize(400,400);
-f.setVisible(true);
-f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-}
-}
+def selection_sort(arr):
+    n = len(arr)
+    for i in range(n):
+        min_idx = i
+        for j in range(i + 1, n):
+            if arr[j] < arr[min_idx]:
+                min_idx = j
+        arr[i], arr[min_idx] = arr[min_idx], arr[i]
+
+# Driver code
+arr = [64, 25, 12, 22, 11]
+print("Original array:", arr)
+selection_sort(arr)
+print("Sorted array:", arr)
 
 
-24. Write a Java program to design Login Screen using Swing.
+Practical No.-24
+Aim: - Write a python program to perform Insertion Sort.
 Code:
-package javaprograms;
+def insertionSort(arr):
+    for i in range(1, len(arr)):
+        key = arr[i]
+        j = i - 1
 
-import javax.swing.*;
-import java.awt.*;
-import java.awt.event.*;
+        while j >= 0 and arr[j] > key:
+            arr[j + 1] = arr[j]
+            j = j - 1
 
-public class LoginSwing extends JFrame implements ActionListener {
-// Components
-JLabel labelUsername, labelPassword, labelTitle;
-JTextField textUsername;
-JPasswordField textPassword;
-JButton buttonLogin, buttonReset;
+        arr[j + 1] = key
 
-public LoginSwing() {
-// Frame settings
-setTitle("Login Screen");
-setSize(400, 300);
-setLayout(null); // Using absolute positioning
-setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-setLocationRelativeTo(null); // Center the frame
+arr = [12, 11, 13, 5, 6]
+print("Original array:", arr)
+insertionSort(arr)
+print("Sorted array:", arr)
 
-// Title Label
-labelTitle = new JLabel("User Login");
-labelTitle.setFont(new Font("Arial", Font.BOLD, 20));
-labelTitle.setBounds(140, 20, 200, 30);
-add(labelTitle);
 
-// Username Label and Field
-labelUsername = new JLabel("Username:");
-labelUsername.setBounds(50, 80, 100, 25);
-add(labelUsername);
-
-textUsername = new JTextField();
-textUsername.setBounds(150, 80, 180, 25);
-add(textUsername);
-
-// Password Label and Field
-labelPassword = new JLabel("Password:");
-labelPassword.setBounds(50, 120, 100, 25);
-add(labelPassword);
-
-textPassword = new JPasswordField();
-textPassword.setBounds(150, 120, 180, 25);
-add(textPassword);
-
-// Buttons
-buttonLogin = new JButton("Login");
-buttonLogin.setBounds(100, 180, 80, 30);
-buttonLogin.addActionListener(this);
-add(buttonLogin);
-
-buttonReset = new JButton("Reset");
-buttonReset.setBounds(200, 180, 80, 30);
-buttonReset.addActionListener(this);
-add(buttonReset);
-
-// Make frame visible
-setVisible(true);
-}
-
-@Override
-public void actionPerformed(ActionEvent e) {
-if (e.getSource() == buttonLogin) {
-String username = textUsername.getText();
-String password = new String(textPassword.getPassword());
-
-if (username.equals("admin") && password.equals("12345")) {
-JOptionPane.showMessageDialog(this, "Login Successful!");
-} else {
-JOptionPane.showMessageDialog(this, "Invalid Username or Password!");
-}
-}
-
-if (e.getSource() == buttonReset) {
-textUsername.setText("");
-textPassword.setText("");
-}
-}
-
-public static void main(String[] args) {
-new LoginSwing();
-
-25. write a java program to create a Candidate information screen.
+Practical No.-25
+Aim: - Write a python program to perform bubble Sort.
 Code:
-package javaprograms;
-import java.awt.*;
-import javax.swing.*;
-public class SwingCan extends JFrame {
-JLabel l1,l2,l3,l4,l5,l6;
-JCheckBox check1,check2,check3;
-JTextField t1,t2,t3,t4;
-JButton b1,b2;
-JRadioButton radio1,radio2;
-JPanel j1,j2,j3,j4;
-Container Contentpane;
-ButtonGroup bg;
-public SwingCan()
-{
-setLayout(new GridLayout(4,1));
-setSize(300,500);
-setVisible(true);
-setTitle("Candidate Information");
-j1=new JPanel();
-j2=new JPanel();
-j3=new JPanel();
-j4=new JPanel();
-bg=new ButtonGroup();
-l1=new JLabel("First Name");
-l2=new JLabel("Last Name");
-l3=new JLabel("Address");
-l4=new JLabel("Mobile No");
-l5=new JLabel("Gender");
-l6=new JLabel("Your Interest");
-b1=new JButton("Submit");
-b2=new JButton("Reset");
-t1=new JTextField(20);
-t2=new JTextField(20);
-t3=new JTextField(20);
-t4=new JTextField(20);
-radio1= new JRadioButton("Male");
-radio2= new JRadioButton("Female");
-bg.add(radio1);
-bg.add(radio2);
-check1= new JCheckBox("Computer");
-check2= new JCheckBox("Sports");
-check3= new JCheckBox("Music");
-j1.add(l1);
-j1.add(t1);
-j1.add(l2);
-j1.add(t2);
-j1.add(l3);
-j1.add(t3);
-j1.add(l4);
-j1.add(t4);
-add(j1);
-j2.add(l5);
-j2.add(radio1);
-j2.add(radio2);
-add(j2);
-j3.add(l6);
-j3.add(check1);
-j3.add(check2);
-j3.add(check3);
-add(j3);
-j4.add(b1);
-j4.add(b2);
-add(j4);
-}
-public static void main(String args[]) {
-new SwingCan();
-}}
+def bubbleSort(arr):
+    n = len(arr)
+    
+    for i in range(n - 1):
+        for j in range(n - 1 - i):
+            if arr[j] > arr[j + 1]:
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
 
-26.write a java program to create a Student information screen.
+arr = [64, 34, 25, 12, 22, 11, 90]
+print("Original array:", arr)
+bubbleSort(arr)
+print("Sorted array:", arr)
+
+Practical No.-26
+Aim: - Write a python program to perform Merge Sort.
 Code:
-package javaprograms;
-import java.awt.*;
-import javax.swing.*;
-public class student_info_swing extends JFrame {
-JLabel l1, l2, l3, l4, l5, l6;
-JCheckBox check1, check2, check3;
-JTextField t1, t2, t3, t4;
-JButton b1, b2;
-JRadioButton radio1, radio2;
-Container contentPane;
-ButtonGroup bg;
-JPanel j1, j2, j3, j4;
-public student_info_swing() {
-setLayout(new GridLayout(4,1));
-setSize(400, 400);
-setTitle("Candidate Info");
-setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-j1 = new JPanel();
-j2 = new JPanel();
-j3 = new JPanel();
-j4 = new JPanel();
-l1 = new JLabel("First Name:");
-l2 = new JLabel("Last Name:");
-l3 = new JLabel("Mobile Number:");
-l4 = new JLabel("Address:");
-l5 = new JLabel("Gender:");
-l6 = new JLabel("Your Interests:");
-t1 = new JTextField(10);
-t2 = new JTextField(10);
-t3 = new JTextField(10);
-t4 = new JTextField(10);
-radio1 = new JRadioButton("Male");
-radio2 = new JRadioButton("Female");
-bg = new ButtonGroup();
-bg.add(radio1);
-bg.add(radio2);
-check1 = new JCheckBox("Computer");
-check2 = new JCheckBox("Sports");
-check3 = new JCheckBox("Music");
-b1 = new JButton("Submit");
-b2 = new JButton("Reset");
-j1.add(l1);
-j1.add(t1);
-j1.add(l2);
-j1.add(t2);
-j1.add(l3);
-j1.add(t3);
-j1.add(l4);
-j1.add(t4);
-j2.add(l5);
-j2.add(radio1);
-j2.add(radio2);
-j3.add(l6);
-j3.add(check1);
-j3.add(check2);
-j3.add(check3);
-j4.add(b1);
-j4.add(b2);
-add(j1);
-add(j2);
-add(j3);
-add(j4);
-setVisible(true);
-}
-public static void main(String[] args) {
-new student_info_swing();
-}
-}
+def merge(left, right):
+    result = []
+    i = j = 0
 
-27.Write a JDBC program to Store details of Employees(Empno,Empname,salary,dept). Code:
-package javaprograms;
-import java.sql.*;
-import java.io.*;
-import java.util.*;
-public class JDBCStudent {
-public static void main(String[] args)throws SQLException,ClassNotFoundException {
-Class.forName("com.mysql.cj.jdbc.Driver");
-System.out.println("JDBC not registerd");
-System.out.println("jdbc registered");
-String url = "jdbc:mysql://root@localhost:3306/crud";
-String insertQuery = "INSERT INTO Employee (Empno, Empname, Salary, Dept) VALUES (?, ?, ?, ?)";
-try (
-Connection conn = DriverManager.getConnection(url);
-PreparedStatement pstmt = conn.prepareStatement(insertQuery);
-Scanner sc = new Scanner(System.in)
-) {
-System.out.print("Enter Employee Number: ");
-int empno = sc.nextInt();
-sc.nextLine(); // consume newline
-System.out.print("Enter Employee Name: ");
-String empname = sc.nextLine();
-System.out.print("Enter Salary: ");
-double salary = sc.nextDouble();
-sc.nextLine(); // consume newline
-System.out.print("Enter Department: ");
-String dept = sc.nextLine();
-// Set parameters
-pstmt.setInt(1, empno);
-pstmt.setString(2, empname);
-pstmt.setDouble(3, salary);
-pstmt.setString(4, dept);
-// Execute update
-int rowsInserted = pstmt.executeUpdate();
-if (rowsInserted > 0) {
-System.out.println("Employee details inserted successfully!");
-}
-} catch (Exception e) {
- e.printStackTrace();
-}}
-}
+    while i < len(left) and j < len(right):
+        if left[i] <= right[j]:
+            result.append(left[i])
+            i += 1
+        else:
+            result.append(right[j])
+            j += 1
 
-28.Write a JDBC program to display details of students on Screen.
+    result.extend(left[i:])
+    result.extend(right[j:])
+    return result
+
+def mergeSort(arr):
+    if len(arr) <= 1:
+        return arr
+
+    mid = len(arr) // 2
+
+    left = mergeSort(arr[:mid])
+    right = mergeSort(arr[mid:])
+
+    return merge(left, right)
+
+arr = [38, 27, 43, 10]
+
+sorted_arr = mergeSort(arr)
+print("Original array:", arr)
+print("Sorted array:", sorted_arr)
+
+
+Practical No.-27
+Aim: - Write a python program to perform Heap Sort.
 Code:
-package javaprograms;
+def heapify(arr, n, i):
+    largest = i
+    left = 2 * i + 1
+    right = 2 * i + 2
 
-import java.sql.*;
+    if left < n and arr[left] > arr[largest]:
+        largest = left
 
-public class JDBCStudentScreen {
-public static void main(String[] args) throws SQLException, ClassNotFoundException {
-Class.forName("com.mysql.cj.jdbc.Driver");
-System.out.println("JDBC Registered");
-String url = "jdbc:mysql://localhost:3306/crud";
-String user = "root";
-String password = "";
-String selectQuery = "SELECT id, name, age, course, marks FROM students";
+    if right < n and arr[right] > arr[largest]:
+        largest = right
 
-try (
-Connection conn = DriverManager.getConnection(url, user, password);
-Statement stmt = conn.createStatement();
-ResultSet rs = stmt.executeQuery(selectQuery)
-) {
-System.out.println("Student Details:");
-while (rs.next()) {
-int rollNo = rs.getInt("id");
-String name = rs.getString("name");
-int age = rs.getInt("age");
-String course = rs.getString("course");
-double marks = rs.getDouble("marks");
-System.out.println("Roll No: " + rollNo);
-System.out.println("Name: " + name);
-System.out.println("Age: " + age);
-System.out.println("Course: " + course);
-System.out.println("Marks: " + marks);
-System.out.println("--------------------");
-}
-} catch (Exception e) {
-e.printStackTrace();
-}
-}
-}
+    if largest != i:
+        arr[i], arr[largest] = arr[largest], arr[i]
+        heapify(arr, n, largest)
 
-29.Create Simple AWT window with Label and button on button click display message.
-Code:
-package javaprograms;
-import java.awt.*;
-import java.awt.event.*;
-public class click_button extends Frame implements ActionListener {
-Label label;
-Button button;
-click_button() {
-setTitle("Simple AWT Example");
-setLayout(new FlowLayout());
-label = new Label("Click the button to see a message");
-button = new Button("Click Me");
-add(label);
-add(button);
-button.addActionListener(this);
-setSize(300, 150);
-setVisible(true); 
-addWindowListener(new WindowAdapter() {
-public void windowClosing(WindowEvent e) {
-dispose();
-}
-});
-} 
-public void actionPerformed(ActionEvent e) {
-label.setText("Button Clicked! Hello from AWT!");
-} 
-public static void main(String[] args) {
-new click_button();
-}
-}
+def heapSort(arr):
+    n = len(arr)
 
-30.Create menubar with menuItem and menuItemList.
-Code:
-package javaprograms;
-import java.awt.*;
-import java.awt.event.*;
-public class menu_frame extends Frame implements ActionListener {
-MenuBar menuBar;
-Menu fileMenu, editMenu, helpMenu;
-MenuItem newItem, openItem, saveItem, exitItem;
-MenuItem cutItem, copyItem, pasteItem;
-MenuItem aboutItem;
-Label label;
-menu_frame() {
-// Frame settings
-setTitle("AWT MenuBar Example");
-setSize(500, 300);
-setLayout(new FlowLayout());
-// Label
-label = new Label("Choose a menu item...");
-add(label); 
-// Create MenuBar
-menuBar = new MenuBar(); 
-// Menus
-fileMenu = new Menu("File");
-editMenu = new Menu("Edit");
-helpMenu = new Menu("Help"); 
-// File MenuItems
-newItem = new MenuItem("New");
-openItem = new MenuItem("Open");
-saveItem = new MenuItem("Save");
-exitItem = new MenuItem("Exit"); 
-// Add File items
-fileMenu.add(newItem);
-fileMenu.add(openItem);
-fileMenu.add(saveItem);
-fileMenu.addSeparator();
-fileMenu.add(exitItem); 
-// Edit MenuItems
-cutItem = new MenuItem("Cut");
-copyItem = new MenuItem("Copy");
-pasteItem = new MenuItem("Paste"); 
-// Add Edit items
-editMenu.add(cutItem);
-editMenu.add(copyItem);
-editMenu.add(pasteItem); 
-// Help MenuItems
- aboutItem = new MenuItem("About");
-helpMenu.add(aboutItem); 
-// Add Menus to MenuBar
-menuBar.add(fileMenu);
-menuBar.add(editMenu);
-menuBar.add(helpMenu); 
-// Attach MenuBar to Frame BEFORE making it visible
-setMenuBar(menuBar); 
-// Add ActionListeners
-newItem.addActionListener(this);
-openItem.addActionListener(this);
-saveItem.addActionListener(this);
-exitItem.addActionListener(this);
-cutItem.addActionListener(this);
-copyItem.addActionListener(this);
-pasteItem.addActionListener(this);
-aboutItem.addActionListener(this); 
-// Handle window close
-addWindowListener(new WindowAdapter() {
-public void windowClosing(WindowEvent e) {
-System.exit(0);
-}
-});
-// Make frame visible after adding everything
-setVisible(true);
-} 
-public void actionPerformed(ActionEvent e) {
-String command = e.getActionCommand();
-if (command.equals("Exit")) {
-System.exit(0);
-} else {
-label.setText("You clicked: " + command);
-}
-} 
-public static void main(String[] args) {
-new menu_frame();
-}
-}
+    for i in range(n // 2 - 1, -1, -1):
+        heapify(arr, n, i)
 
-31. Create a Java Program using swings to display popup menu.
-import javax.swing.*;
-import java.awt.event.*;
-public class PopupMenuExample {
-      public static void main(String[] args) {
+    for i in range(n - 1, 0, -1):
+        arr[i], arr[0] = arr[0], arr[i]
+        heapify(arr, i, 0)
 
-        // Create JFrame
-        JFrame frame = new JFrame("Popup Menu Example");
+arr = [9, 4, 3, 8, 10, 2, 5]
+print("Original array:", arr)
+heapSort(arr)
+print("Sorted array:", arr)
 
-        // Create Popup Menu
-        JPopupMenu popupMenu = new JPopupMenu();
+PRACTICAL 28
+Aim:- Implement Binary Search
+def binary_search(arr, target):
+    left, right = 0, len(arr) - 1
 
-        // Create Menu Items
-        JMenuItem cut = new JMenuItem("Cut");
-        JMenuItem copy = new JMenuItem("Copy");
-        JMenuItem paste = new JMenuItem("Paste");
+    while left <= right:
+        mid = (left + right) // 2
 
-        // Add menu items to popup menu
-        popupMenu.add(cut);
-        popupMenu.add(copy);
-        popupMenu.add(paste);
+        if arr[mid] == target:
+            return mid
+        elif arr[mid] < target:
+            left = mid + 1
+        else:
+            right = mid - 1
 
-        // Add Mouse Listener to show popup menu on right click
-        frame.addMouseListener(new MouseAdapter() {
-            public void mousePressed(MouseEvent e) {
-                if (e.isPopupTrigger()) {
-                    popupMenu.show(e.getComponent(), e.getX(), e.getY());
-                }
-            }
+    return -1
 
-            public void mouseReleased(MouseEvent e) {
-                if (e.isPopupTrigger()) {
-                    popupMenu.show(e.getComponent(), e.getX(), e.getY());
-                }
-            }
-        });
+arr = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19]
+target = int(input("Enter the number to search: "))
 
-        // Frame settings
-        frame.setSize(400, 300);
-        frame.setLayout(null);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setVisible(true);
-    }
-}
+result = binary_search(arr, target)
+
+if result != -1:
+    print(f"Found at index: {result}")
+else:
+    print("Not found in the array")
+
+
+PRACTICAL 29
+Aim:- Implement Linear Search
+def linear_search(arr, target):
+    for i in range(len(arr)):
+        if arr[i] == target:
+            return i
+    return -1
+
+# Fixed array
+arr = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19]
+
+# Get target input from user
+target = int(input("Enter the number to search: "))
+
+# Perform linear search
+result = linear_search(arr, target)
+
+if result != -1:
+    print(f"Found at index: {result}")
+else:
+    print("Not found in the array")
+
+
+PRACTICAL 30
+Aim:- Implement quick sort:
+def quick_sort(arr):
+    if len(arr) <= 1:
+        return arr
+    
+    pivot = arr[len(arr) // 2]
+    left = [x for x in arr if x < pivot]
+    middle = [x for x in arr if x == pivot]
+    right = [x for x in arr if x > pivot]
+    
+    return quick_sort(left) + middle + quick_sort(right)
+
+arr = [64, 34, 25, 12, 22, 11, 90, 88, 45, 50]
+
+print("Original array:", arr)
+sorted_arr = quick_sort(arr)
+print("Sorted array:", sorted_arr)
 
 
 
 
+
+
+ 
+ 
